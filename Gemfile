@@ -1,3 +1,3 @@
-source "https://rubygem.org"
+source "https://rubygems.org"
 
 gem "danger", "~> 9.0"
