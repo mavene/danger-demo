@@ -1,5 +1,5 @@
 # Check 1: PR Description
-warn("Add a description") if github.pr_body
+warn("Add a description") if github.pr_body.empty?
 # Check 2: PR Title
 warn("Title is not descriptive") if github.pr_title.length < 10
 # Check 3: PR Labels
