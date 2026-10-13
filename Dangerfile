@@ -1,0 +1,12 @@
+# Check 1: PR Description
+warn("Add a description") if github.pr_body_empty?
+# Check 2: PR Title
+warn("Title is not descriptive") if github.pr_title.length < 10
+# Check 3: PR Labels
+warn("Add labels") if github.pr_labels.empty?
+# Check 4: PR Size
+warn("PR is too large") if github.lines_of_code > 500
+# Check 5: Documentation
+warn("Update README with new features/tests") if git.modified_files.any? { \|f\|f.start_with?("src/") } && git.modified_files.none? { \|f|f.start_with?("tests/")}
+# Confirmation
+message("All Danger PR checks passed!")
