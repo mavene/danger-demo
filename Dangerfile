@@ -7,6 +7,6 @@ warn("Add labels") if github.pr_labels.empty?
 # Check 4: PR Size
 warn("PR is too large") if github.lines_of_code > 500
 # Check 5: Documentation
-warn("Update README with new features/tests") if git.modified_files.any? { \|f\|f.start_with?("src/") } && git.modified_files.none? { \|f|f.start_with?("tests/")}
+warn("Update README with new features/tests") if git.modified_files.any? { |f| f.start_with?("src/") } && !git.modified_files.include?("README.md")
 # Confirmation
 message("All Danger PR checks passed!")
