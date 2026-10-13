@@ -9,4 +9,4 @@ warn("PR is too large") if git.lines_of_code > 500
 # Check 5: Documentation
 warn("Update README with new features/tests") if git.modified_files.any? { |f| f.start_with?("src/") } && !git.modified_files.include?("README.md")
 # Confirmation
-message("All Danger PR checks passed!")
+message("All Danger PR checks done!")
